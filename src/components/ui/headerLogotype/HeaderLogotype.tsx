@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { FC } from 'react'
 
-import styles from './headerLogotype.module.scss'
+import styles from './HeaderLogotype.module.scss'
 
 const HeaderLogotype: FC = () => {
 	return (

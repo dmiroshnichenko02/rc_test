@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import HeaderLogotype from '@/components/ui/headerLogotype/HeaderLogotype'
 import { IFieldMenu } from '@/shared/types/menu.interface'
-import styles from './header.module.scss'
+import styles from './Header.module.scss'
 import Navigation from './navigation/Navigation'
 
 interface IHeader {
