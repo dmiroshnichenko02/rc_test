@@ -12,5 +12,16 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
+		.menu {
+			display: flex;
+			justify-content: space-between;
+			max-width: 70%;
+
+			span {
+				display: flex;
+				gap: 30px;
+			}
+		}
 	}
 }

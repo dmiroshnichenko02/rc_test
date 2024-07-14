@@ -1,15 +1,15 @@
-import { FC } from 'react'
+'use client'
 
 import HeaderLogotype from '@/components/ui/headerLogotype/HeaderLogotype'
-import { IFieldMenu } from '@/shared/types/menu.interface'
+import SkeletonLoader from '@/components/ui/SkeletonLoader'
+import { FC } from 'react'
 import styles from './Header.module.scss'
 import Navigation from './navigation/Navigation'
+import { useHeaderMenu } from './useHeaderMenu'
 
-interface IHeader {
-	menu: IFieldMenu[]
-}
+const Header: FC = () => {
+	const { isLoading, data } = useHeaderMenu()
 
-const Header: FC<IHeader> = ({ menu }) => {
 	return (
 		<>
 			<header className={styles.header}>
@@ -18,7 +18,13 @@ const Header: FC<IHeader> = ({ menu }) => {
 						<div className={styles.logotype}>
 							<HeaderLogotype />
 						</div>
-						<Navigation menu={menu} />
+						<div className={styles.menu}>
+							{isLoading ? (
+								<SkeletonLoader count={5} className='h-6 min-w-24 opacity-40' />
+							) : (
+								data && <Navigation menu={data.fields} />
+							)}
+						</div>
 					</div>
 				</div>
 			</header>

@@ -2,7 +2,7 @@ import MainProvider from '@/providers/MainProvider'
 import clsx from 'clsx'
 import type { Metadata } from 'next'
 import { Montserrat, Space_Grotesk } from 'next/font/google'
-import './globals.css'
+import './globals.scss'
 
 const space = Space_Grotesk({ subsets: ['latin'], variable: '--font-space' })
 const mont = Montserrat({
