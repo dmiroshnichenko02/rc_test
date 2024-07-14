@@ -1,11 +1,13 @@
+import dynamic from 'next/dynamic'
 import { FC, PropsWithChildren } from 'react'
 import Footer from './footer/Footer'
-import Header from './header/Header'
+
+export const DynamicHeader = dynamic(() => import('./header/Header'), {})
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<>
-			<Header />
+			<DynamicHeader />
 			{children}
 			<Footer />
 		</>

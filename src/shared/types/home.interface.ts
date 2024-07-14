@@ -24,9 +24,10 @@ export interface Testimonial {
 	text: string
 }
 
-export interface HomeData {
+export interface IHomeData {
 	acf: {
 		sub_title_h: string
+		second_title: string
 		title_h: string
 		benefits: Benefit[]
 		title_headless: string
@@ -56,5 +57,11 @@ export interface HomeData {
 		link_btn_t2: string
 		title_tm: string
 		testimonials: Testimonial[]
+	}
+}
+
+export interface IHome extends IHomeData {
+	title: {
+		rendered: string
 	}
 }
