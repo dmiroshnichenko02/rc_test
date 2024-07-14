@@ -2,7 +2,7 @@
 const nextConfig = {
 	poweredByHeader: false,
 	env: {
-		APP_URL_PAGES: process.env.REACT_APP_URL,
+		NEXT_PUBLIC_WP_URL: process.env.REACT_APP_URL,
 	},
 }
 
