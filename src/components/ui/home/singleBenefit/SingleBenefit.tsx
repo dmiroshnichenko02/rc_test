@@ -5,7 +5,7 @@ import SmallHeading from '../../headings/SmallHeading'
 import SubHeading from '../../headings/SubHeading'
 
 import clsx from 'clsx'
-import styles from './SIngleBenefit.module.scss'
+import styles from './SingleBenefit.module.scss'
 
 const SingleBenefit: FC<Benefit> = ({ number, text, subnumber, title }) => {
 	return (
