@@ -62,7 +62,11 @@ const ServicesSection: FC<IServicesSection> = ({
 				</div>
 			</div>
 			<div className={styles.btns}>
-				<Button link={btnLink} buttonText={btnText} />
+				<Button
+					link={btnLink}
+					buttonText={btnText}
+					className={styles.btnColor}
+				/>
 			</div>
 		</section>
 	)

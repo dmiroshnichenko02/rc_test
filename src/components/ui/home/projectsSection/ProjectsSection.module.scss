@@ -1,0 +1,99 @@
+@import '../../../../assets/styles/variables.scss';
+
+.projects {
+	padding-top: 140px;
+	background-color: #fff;
+	padding-bottom: 100px;
+	overflow: hidden;
+	a {
+		text-decoration: none;
+	}
+	.title {
+		text-align: center;
+		font-size: 50px;
+		line-height: 1.3em;
+		margin-bottom: 20px;
+		color: $mainTextColor;
+		font-weight: 700;
+	}
+	.descr {
+		display: block;
+		max-width: 710px;
+		margin: 0 auto 60px;
+		text-align: center;
+		font-size: 21px;
+		line-height: 30px;
+		color: $mainTextColor;
+	}
+
+	.wrapperProjects {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto;
+	}
+	.btns {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.sliderWrap {
+		display: none;
+	}
+
+	.btns {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.button {
+		min-width: 260px;
+		padding: 5px 20px;
+		margin-top: 50px;
+	}
+}
+
+@media (max-width: 1440px) {
+	.projects {
+		.title {
+			font-size: 45px;
+			line-height: 1.2em;
+			margin-bottom: 15px;
+		}
+		.wrapper {
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 0px 50px;
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.projects {
+		padding-bottom: 40px;
+		.title {
+			font-size: 35px;
+			line-height: 1.1em;
+		}
+		.wrapperProjects {
+			display: none;
+		}
+		.sliderWrap {
+			display: block;
+			margin-bottom: 70px;
+		}
+		.btns {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.projects {
+		.title {
+			font-size: 25px;
+			line-height: 1em;
+		}
+	}
+}

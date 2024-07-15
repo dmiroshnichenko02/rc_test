@@ -53,6 +53,13 @@
 	}
 }
 
+.btnColor {
+	color: $activeTextColor;
+	&:hover {
+		color: #fff;
+	}
+}
+
 @media (max-width: 1440px) {
 	.services {
 		padding-top: 50px;

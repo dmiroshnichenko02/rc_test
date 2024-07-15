@@ -1,0 +1,7 @@
+.projects {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: minmax(706px, auto);
+	grid-auto-rows: minmax(706px, auto);
+	gap: 40px;
+}

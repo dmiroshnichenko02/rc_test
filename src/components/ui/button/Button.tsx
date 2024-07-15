@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, JSXElementConstructor, ReactElement } from 'react'
 
 import clsx from 'clsx'
 import Link from 'next/link'
@@ -6,7 +6,7 @@ import styles from './Button.module.scss'
 
 interface IButton {
 	link: string
-	buttonText: string
+	buttonText: string | ReactElement<any, string | JSXElementConstructor<any>>[]
 	className?: string
 }
 
