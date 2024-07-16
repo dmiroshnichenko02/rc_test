@@ -10,6 +10,7 @@
 
 body {
 	font-family: var(--font-space);
+	background-color: #f6f5f9;
 }
 
 h1,
@@ -62,3 +63,36 @@ a {
 		max-width: 1550px;
 	}
 }
+
+.swiper-horizontal {
+	overflow: visible !important;
+}
+
+.swiper-pagination {
+	bottom: -50px !important;
+}
+
+.swiper-pagination-bullet {
+	display: inline-block;
+	background: #000 !important;
+	opacity: 1 !important;
+	width: 10px !important;
+	height: 10px !important;
+	border-radius: 50%;
+	margin-right: 12px;
+	transition: all 0.3s ease-in-out;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	font-size: 0;
+	margin: 0 10px !important;
+}
+
+.swiper-pagination-bullet-active {
+	transform: scale(2);
+}
+
+// .testimonials .swiper-pagination {
+// 	left: -28.5% !important;
+// 	bottom: 0 !important;
+// }

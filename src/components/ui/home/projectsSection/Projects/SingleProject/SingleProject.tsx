@@ -22,7 +22,7 @@ const SingleProject: FC<ISingleProject> = ({ projectId }) => {
 	return (
 		<div>
 			{isLoading ? (
-				<SkeletonLoader count={1} className='h-96 w-96' />
+				<SkeletonLoader count={1} className='h-[755px] w-full opacity-40' />
 			) : (
 				<div className={styles.singleProject}>
 					<div className={styles.img}>

@@ -1,0 +1,22 @@
+.testimonial {
+	width: 935px;
+	padding: 65px 60px;
+	margin: 0 auto;
+	position: relative;
+
+	&::before {
+		position: absolute;
+		content: url('/left.svg');
+		left: -18px;
+		top: -17px;
+		transform: scale(0.5);
+	}
+
+	&::after {
+		position: absolute;
+		content: url('/left.svg');
+		right: -18px;
+		bottom: -17px;
+		transform: scale(0.5) rotate(180deg);
+	}
+}

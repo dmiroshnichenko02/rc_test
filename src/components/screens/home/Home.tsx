@@ -3,6 +3,8 @@
 import HeadSection from '@/components/ui/home/headSection/HeadSection'
 import ProjectsSection from '@/components/ui/home/projectsSection/ProjectsSection'
 import ServicesSection from '@/components/ui/home/servicesSection/ServicesSection'
+import Team from '@/components/ui/home/team/Team'
+import Testimonials from '@/components/ui/home/testimonials/Testimonials'
 import Works from '@/components/ui/home/works/Works'
 import { IHome } from '@/shared/types/home.interface'
 import { FC } from 'react'
@@ -43,6 +45,15 @@ const Home: FC<IHome> = ({ acf, title }) => {
 				buttonLink={acf.link_circle_hw}
 				buttonText={acf.text_circle_tm}
 			/>
+			<Team
+				title={acf.title_team}
+				team={acf.team}
+				firstButtonText={acf.text_btn_t1}
+				firstButtonLink={acf.link_btn_t1}
+				secondButtonText={acf.text_btn_t2}
+				secondButtonLink={acf.link_btn_t2}
+			/>
+			<Testimonials title={acf.title_tm} testimonials={acf.testimonials} />
 		</main>
 	)
 }

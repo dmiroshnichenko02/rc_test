@@ -7,11 +7,15 @@ interface IDescription {
 }
 
 const Description: FC<IDescription> = ({ title, className }) => {
-	return (
-		<p className={clsx('text-[18px] font-[var(--font-space)]', className)}>
-			{title}
-		</p>
-	)
+	if (typeof title === 'string') {
+		return (
+			<p className={clsx('text-[18px] font-[var(--font-space)]', className)}>
+				{title}
+			</p>
+		)
+	} else {
+		return <>{title}</>
+	}
 }
 
 export default Description
