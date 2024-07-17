@@ -1,3 +1,5 @@
+'use client'
+
 import { FC } from 'react'
 import styles from './Projects.module.scss'
 import SingleProject from './SingleProject/SingleProject'

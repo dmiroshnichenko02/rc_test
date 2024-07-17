@@ -14,7 +14,11 @@ const Description: FC<IDescription> = ({ title, className }) => {
 			</p>
 		)
 	} else {
-		return <>{title}</>
+		return (
+			<div className={clsx('text-[18px] font-[var(--font-space)]', className)}>
+				{title}
+			</div>
+		)
 	}
 }
 

@@ -27,9 +27,9 @@ const Team: FC<ITeam> = ({
 	title,
 }) => {
 	return (
-		<section className={styles.team}>
+		<section className={styles.team} id='team'>
 			<div className='container'>
-				<SubHeading title={title} className={styles.title} />
+				<SubHeading title={title} className={styles.titles} />
 				<div className={styles.wrapper}>
 					<Swiper
 						spaceBetween={50}

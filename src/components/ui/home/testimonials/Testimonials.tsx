@@ -17,9 +17,12 @@ interface ITestimonials {
 
 const Testimonials: FC<ITestimonials> = ({ testimonials, title }) => {
 	return (
-		<section className={clsx(styles.testimonials, 'testimonials')}>
+		<section
+			className={clsx(styles.testimonials, 'testimonials')}
+			id='testimonials'
+		>
 			<div className='container'>
-				<SubHeading title={title} />
+				<SubHeading title={title} className={styles.title} />
 				<div className={styles.wrapper}>
 					<Swiper
 						spaceBetween={50}
