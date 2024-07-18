@@ -18,16 +18,22 @@ const Navigation: FC<INavigation> = ({ menu }) => {
 		<nav className={styles.nav}>
 			<ul className={styles.menu}>
 				{menu.length > 0 &&
-					menu.map((item, index) => (
-						<li
-							key={index}
-							className={clsx(styles.menuItem, {
-								[styles.active]: pathname === clearMenuUrl(item.url),
-							})}
-						>
-							<Link href={clearMenuUrl(item.url)}>{item.title}</Link>
-						</li>
-					))}
+					menu.map((item, index) => {
+						const itemUrl = clearMenuUrl(item.url)
+						const isActive =
+							(itemUrl === '/' && pathname === '/') ||
+							(itemUrl !== '/' && pathname.includes(itemUrl))
+						return (
+							<li
+								key={index}
+								className={clsx(styles.menuItem, {
+									[styles.active]: isActive,
+								})}
+							>
+								<Link href={itemUrl}>{item.title}</Link>
+							</li>
+						)
+					})}
 			</ul>
 		</nav>
 	)

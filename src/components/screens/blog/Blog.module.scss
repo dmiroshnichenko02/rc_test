@@ -1,0 +1,12 @@
+.blog {
+	padding-top: 140px;
+
+	.wrapper {
+		padding: 10px 40px;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: minmax(350px, auto);
+		grid-auto-rows: minmax(350px, auto);
+		gap: 30px;
+	}
+}

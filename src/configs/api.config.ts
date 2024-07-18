@@ -4,3 +4,4 @@ export const getMenuUrl = `${API_URL}/menus`
 export const homePageUrl = `${API_URL}/pages/2?acf_format=standard`
 export const singleProjectUrl = `${API_URL}/projects`
 export const projectsPageUrl = `${API_URL}/pages/160?acf_format=standard`
+export const blogPageUrl = `${API_URL}/posts`
