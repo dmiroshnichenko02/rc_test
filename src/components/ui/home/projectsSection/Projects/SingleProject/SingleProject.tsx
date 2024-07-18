@@ -29,7 +29,11 @@ const SingleProject: FC<ISingleProject> = ({ projectSlug }) => {
 					<div className={styles.img}>
 						<Image
 							src={data.acf.image_ts}
-							alt={data.title}
+							alt={
+								typeof data.title === 'string'
+									? data.title
+									: data.title.rendered
+							}
 							layout='fill'
 							draggable={false}
 							priority
@@ -37,11 +41,19 @@ const SingleProject: FC<ISingleProject> = ({ projectSlug }) => {
 					</div>
 					<div className={styles.content}>
 						<SubHeading
-							title={ReactHtmlParser(data.title)}
+							title={
+								typeof data.title === 'string'
+									? ReactHtmlParser(data.title)
+									: ReactHtmlParser(data.title.rendered)
+							}
 							className={styles.title}
 						/>
 						<Description
-							title={ReactHtmlParser(data.excerpt)}
+							title={
+								typeof data.excerpt === 'string'
+									? ReactHtmlParser(data.excerpt)
+									: ReactHtmlParser(data.excerpt.rendered)
+							}
 							className={styles.descr}
 						/>
 						<div className={styles.btns}>
