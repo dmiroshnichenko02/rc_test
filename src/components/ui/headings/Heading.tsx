@@ -1,8 +1,8 @@
 import clsx from 'clsx'
-import { FC } from 'react'
+import { FC, JSXElementConstructor, ReactElement } from 'react'
 
 interface IHeading {
-	title: string
+	title: string | ReactElement<any, string | JSXElementConstructor<any>>[]
 	className?: string
 }
 

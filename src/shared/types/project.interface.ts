@@ -135,9 +135,9 @@ export interface IProjectData {
 	status: string
 	type: string
 	link: string
-	title: ProjectTitle
-	content: ProjectContent
-	excerpt: ProjectExcerpt
+	title: string | ProjectTitle
+	content: string | ProjectContent
+	excerpt: string | ProjectExcerpt
 	featured_media: number
 	template: string
 	meta: ProjectMeta

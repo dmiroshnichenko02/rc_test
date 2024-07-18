@@ -10,22 +10,22 @@ const getData = async () => {
 	return data
 }
 
-const getProjectsIds = async () => {
+const getProjectsSlugs = async () => {
 	const data: IProjectData[] = await fetch(singleProjectUrl, {
 		next: { revalidate: 86400 },
 	}).then(res => res.json())
 
-	const ids = data.map(item => item.id)
+	const slugs = data.map(item => item.slug)
 
-	return ids
+	return slugs
 }
 
 const Projects = async () => {
 	const data = await getData()
 
-	const ids = await getProjectsIds()
+	const slugs = await getProjectsSlugs()
 
-	return data && <ProjectsPage data={data} ids={ids} />
+	return data && <ProjectsPage data={data} slugs={slugs} />
 }
 
 export default Projects

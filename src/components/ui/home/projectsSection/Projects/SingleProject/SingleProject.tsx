@@ -5,19 +5,20 @@ import { useSingleProject } from './useSingleProject'
 
 import Description from '@/components/ui/headings/Description'
 import SubHeading from '@/components/ui/headings/SubHeading'
-import { clearProjectsLink } from '@/utils/clearProjectsLink'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './SingleProject.module.scss'
 
 interface ISingleProject {
-	projectId: number
+	projectSlug: number | string
 }
 
-const SingleProject: FC<ISingleProject> = ({ projectId }) => {
-	const { isLoading, data } = useSingleProject(projectId)
+const SingleProject: FC<ISingleProject> = ({ projectSlug }) => {
+	const { isLoading, data } = useSingleProject(projectSlug)
 
 	if (data === undefined) return null
+
+	console.log(data)
 
 	return (
 		<div>
@@ -28,7 +29,7 @@ const SingleProject: FC<ISingleProject> = ({ projectId }) => {
 					<div className={styles.img}>
 						<Image
 							src={data.acf.image_ts}
-							alt={data.title.rendered}
+							alt={data.title}
 							layout='fill'
 							draggable={false}
 							priority
@@ -36,17 +37,17 @@ const SingleProject: FC<ISingleProject> = ({ projectId }) => {
 					</div>
 					<div className={styles.content}>
 						<SubHeading
-							title={ReactHtmlParser(data.title.rendered)}
+							title={ReactHtmlParser(data.title)}
 							className={styles.title}
 						/>
 						<Description
-							title={ReactHtmlParser(data.excerpt.rendered)}
+							title={ReactHtmlParser(data.excerpt)}
 							className={styles.descr}
 						/>
 						<div className={styles.btns}>
-							<a href={clearProjectsLink(data.link)} className={styles.detail}>
+							<Link href={`projects/${data.slug}`} className={styles.detail}>
 								<span className={styles.detailText}>View Detail</span>
-							</a>
+							</Link>
 							<Link href={data.acf.website} className={styles.web}>
 								<span className={styles.webText}>Visit Website</span>
 							</Link>

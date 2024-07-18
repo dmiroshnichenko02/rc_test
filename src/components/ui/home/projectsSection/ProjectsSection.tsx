@@ -9,7 +9,7 @@ interface IProjectsSection {
 	title: string
 	subtitle: string
 	technologies: IService[]
-	projects: number[]
+	projects: number[] | string[]
 	buttonText: string | ReactElement<any, string | JSXElementConstructor<any>>[]
 	buttonLink: string
 }

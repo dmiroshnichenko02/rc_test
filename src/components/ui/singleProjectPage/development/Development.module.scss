@@ -1,0 +1,23 @@
+.dev {
+	padding-top: 60px;
+	.img {
+		position: relative;
+	}
+
+	.title {
+		text-align: center;
+		margin-bottom: 40px;
+		font-size: 40px;
+		line-height: 1.3em;
+		font-weight: 600;
+		color: #000;
+		text-transform: capitalize;
+	}
+
+	.wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 200px;
+	}
+}

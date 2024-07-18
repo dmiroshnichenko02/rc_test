@@ -6,20 +6,31 @@ import { FC } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import styles from './ProjectsPage.module.scss'
 
-const ProjectsPage: FC<{ data: IProjectData; ids: number[] }> = ({
+const ProjectsPage: FC<{ data: IProjectData; slugs: string[] }> = ({
 	data,
-	ids,
+	slugs,
 }) => {
 	return (
 		<section className={styles.projects}>
 			<div className='container'>
-				<Heading title={data.title.rendered} className={styles.title} />
+				<Heading
+					title={
+						typeof data.title === 'string'
+							? ReactHtmlParser(data.title)
+							: ReactHtmlParser(data.title.rendered)
+					}
+					className={styles.title}
+				/>
 				<Description
-					title={ReactHtmlParser(data.content.rendered)}
+					title={
+						typeof data.content === 'string'
+							? ReactHtmlParser(data.content)
+							: ReactHtmlParser(data.content.rendered)
+					}
 					className={styles.descr}
 				/>
 				<div className={styles.wrapper}>
-					<Projects projects={ids} />
+					<Projects projects={slugs} />
 				</div>
 			</div>
 		</section>

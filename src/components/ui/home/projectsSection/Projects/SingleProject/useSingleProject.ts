@@ -1,10 +1,10 @@
 import { ProjectService } from '@/services/project.service'
 import { useQuery } from '@tanstack/react-query'
 
-export const useSingleProject = (projectId: number) => {
+export const useSingleProject = (projectSlug: string | number) => {
 	const { isLoading, data } = useQuery({
-		queryKey: ['singleProject', projectId],
-		queryFn: () => ProjectService.getProjects(projectId),
+		queryKey: ['singleProject', projectSlug],
+		queryFn: () => ProjectService.getProjects(projectSlug),
 	})
 
 	return {

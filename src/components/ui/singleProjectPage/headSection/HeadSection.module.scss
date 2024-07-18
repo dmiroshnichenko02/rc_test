@@ -1,0 +1,25 @@
+.headSection {
+	padding: 20px 0 100px;
+	.img {
+		max-width: 350px;
+		margin: 100px auto;
+		position: relative;
+	}
+
+	.title {
+		display: block;
+		max-width: 1100px;
+		font-weight: 600;
+		color: #000;
+		font-size: 40px;
+		line-height: 70px;
+		text-align: center;
+		margin: 0 auto 20px;
+	}
+
+	.info {
+		display: flex;
+		justify-content: center;
+		gap: 30px;
+	}
+}
