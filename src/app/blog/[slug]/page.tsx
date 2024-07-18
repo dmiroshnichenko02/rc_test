@@ -1,25 +1,17 @@
 import SingleBlog from '@/components/screens/blog/singleBlog/SingleBlog'
 import { blogPageUrl } from '@/configs/api.config'
-import { IBlog, ISingleBlog } from '@/shared/types/blog.interface'
+import { ISingleBlog } from '@/shared/types/blog.interface'
 import { FC } from 'react'
 
 export async function generateStaticParams() {
 	try {
-		const data: IBlog[] = await fetch(blogPageUrl).then(res => res.json())
-
-		const paths = data.map((blog: IBlog) => ({
-			params: { slug: blog.slug },
+		const res = await fetch(blogPageUrl)
+		const blogs = await res.json()
+		return blogs.map((blog: { slug: string }) => ({
+			slug: blog.slug,
 		}))
-
-		return {
-			paths,
-			fallback: 'blocking',
-		}
 	} catch (error) {
-		return {
-			paths: [],
-			fallback: false,
-		}
+		return []
 	}
 }
 
