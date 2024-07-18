@@ -4,7 +4,7 @@ import MainTask from '@/components/ui/singleProjectPage/mainTask/MainTask'
 import Responsive from '@/components/ui/singleProjectPage/responsive/Responsive'
 import { IProjectData } from '@/shared/types/project.interface'
 import { FC } from 'react'
-import styles from './singleProjectPage.module.scss'
+import styles from './SingleProjectPage.module.scss'
 
 const SingleProjectPage: FC<{ data: IProjectData }> = ({ data }) => {
 	return (
