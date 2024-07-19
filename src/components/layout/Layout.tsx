@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import dynamic from 'next/dynamic'
 import { FC, PropsWithChildren } from 'react'
 import Footer from './footer/Footer'
@@ -9,6 +10,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
 		<>
 			<DynamicHeader />
 			{children}
+			<SpeedInsights />
 			<Footer />
 		</>
 	)
