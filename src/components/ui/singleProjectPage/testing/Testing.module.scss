@@ -1,0 +1,68 @@
+@import '../../../../assets/styles/variables.scss';
+
+.test {
+	.wrapper {
+		display: flex;
+		justify-content: space-around;
+		div {
+			&:first-child {
+				ul {
+					display: flex;
+					flex-wrap: wrap;
+
+					li {
+						width: 50%;
+					}
+				}
+			}
+		}
+		li {
+			color: #000;
+			font-size: 18px;
+			padding-left: 20px;
+			font-weight: 300;
+			position: relative;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			list-style-type: none;
+			&:hover {
+				color: $activeTextColor;
+				-webkit-transform: translateX(5px);
+				transform: translateX(5px);
+				&::before {
+					background-color: $activeTextColor;
+				}
+			}
+			&::before {
+				position: absolute;
+				content: '';
+				width: 4px;
+				height: 4px;
+				top: 50%;
+				left: 5px;
+				border-radius: 50%;
+				background-color: $mainTextColor;
+				transform: translateY(-50%);
+			}
+		}
+	}
+
+	.title {
+		text-align: center;
+		font-size: 40px;
+		line-height: 1.3em;
+		margin-bottom: 20px;
+		font-weight: 600;
+		color: #000;
+		text-transform: capitalize;
+	}
+
+	.descr {
+		max-width: 830px;
+		font-weight: 300;
+		margin: 0 auto 45px;
+		text-align: center;
+		font-size: 18px;
+		line-height: 25px;
+	}
+}

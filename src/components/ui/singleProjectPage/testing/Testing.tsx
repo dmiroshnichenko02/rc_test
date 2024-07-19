@@ -2,6 +2,7 @@ import { FC } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import Description from '../../headings/Description'
 import Heading from '../../headings/Heading'
+import SingleWork from '../../home/works/singleWork/SingleWork'
 import styles from './Testing.module.scss'
 
 interface ITool {
@@ -18,9 +19,17 @@ const Testing: FC<ITesting> = ({ description, tools, title }) => {
 	return (
 		<section className={styles.test}>
 			<div className='container'>
-				<Heading title={title} />
-				<Description title={ReactHtmlParser(description)} />
-				<div className={styles.wrapper}></div>
+				{title && <Heading title={title} className={styles.title} />}
+				{description && (
+					<Description
+						title={ReactHtmlParser(description)}
+						className={styles.descr}
+					/>
+				)}
+				<div className={styles.wrapper}>
+					{tools.length &&
+						tools.map(tool => <SingleWork text={ReactHtmlParser(tool.list)} />)}
+				</div>
 			</div>
 		</section>
 	)

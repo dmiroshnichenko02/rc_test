@@ -144,3 +144,8 @@ export interface IProjectData {
 	acf: ProjectACF
 	_links: ProjectLinks
 }
+
+export interface IImage {
+	title: string
+	url: string
+}

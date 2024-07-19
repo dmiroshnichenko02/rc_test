@@ -1,15 +1,11 @@
 import { FC } from 'react'
 
+import { IImage } from '@/shared/types/project.interface'
 import Image from 'next/image'
 import ReactHtmlParser from 'react-html-parser'
 import Description from '../../headings/Description'
 import Heading from '../../headings/Heading'
 import styles from './Responsive.module.scss'
-
-interface IImage {
-	title: string
-	url: string
-}
 
 interface IResponsive {
 	title: string
