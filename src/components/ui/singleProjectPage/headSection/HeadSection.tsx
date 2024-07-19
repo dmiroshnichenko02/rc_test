@@ -18,27 +18,33 @@ const HeadSection: FC<IHeadSection> = ({ information, logotype, title }) => {
 	return (
 		<section className={styles.headSection}>
 			<div className='container'>
-				<Heading title={ReactHtmlParser(title)} className={styles.title} />
-				<div className={styles.img}>
-					<Image
-						src={logotype}
-						alt={title}
-						width={350}
-						height={350}
-						priority
-						draggable={false}
-					/>
-				</div>
-				<div className={styles.info}>
-					{information.map(({ number, subnumber, text }) => (
-						<SingleBenefit
-							title=''
-							number={number}
-							subnumber={subnumber}
-							text={text}
+				{title && (
+					<Heading title={ReactHtmlParser(title)} className={styles.title} />
+				)}
+				{logotype && (
+					<div className={styles.img}>
+						<Image
+							src={logotype}
+							alt={title}
+							width={350}
+							height={350}
+							priority
+							draggable={false}
 						/>
-					))}
-				</div>
+					</div>
+				)}
+				{information && information.length && (
+					<div className={styles.info}>
+						{information.map(({ number, subnumber, text }) => (
+							<SingleBenefit
+								title=''
+								number={number}
+								subnumber={subnumber}
+								text={text}
+							/>
+						))}
+					</div>
+				)}
 			</div>
 		</section>
 	)

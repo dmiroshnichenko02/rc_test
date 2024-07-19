@@ -16,19 +16,21 @@ const Development: FC<IDevelopment> = ({ description, image, title }) => {
 	return (
 		<section className={styles.dev}>
 			<div className='container'>
-				<Heading title={title} className={styles.title} />
+				{title && <Heading title={title} className={styles.title} />}
 				<div className={styles.wrapper}>
-					<div className={styles.img}>
-						<Image
-							src={image}
-							alt={title}
-							draggable={false}
-							priority
-							width={700}
-							height={1200}
-						/>
-					</div>
-					<Description title={ReactHtmlParser(description)} />
+					{image && (
+						<div className={styles.img}>
+							<Image
+								src={image}
+								alt={title}
+								draggable={false}
+								priority
+								width={700}
+								height={1200}
+							/>
+						</div>
+					)}
+					{description && <Description title={ReactHtmlParser(description)} />}
 				</div>
 			</div>
 		</section>

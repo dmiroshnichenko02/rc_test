@@ -16,23 +16,29 @@ const MainTask: FC<IMainTask> = ({ title, description, image, website }) => {
 	return (
 		<section className={styles.mainTask}>
 			<div className='container'>
-				<Heading title={title} className={styles.title} />
-				<Description title={description} className={styles.descr} />
-				<div className={styles.view}>
-					<div className={styles.box}>
-						<Image
-							src={image}
-							alt={title}
-							width={900}
-							height={600}
-							priority
-							draggable={false}
-						/>
-						<div className={styles.website}>
-							<Button buttonText={'Visit Website'} link={website} />
+				{title && <Heading title={title} className={styles.title} />}
+				{description && (
+					<Description title={description} className={styles.descr} />
+				)}
+				{image && (
+					<div className={styles.view}>
+						<div className={styles.box}>
+							<Image
+								src={image}
+								alt={title}
+								width={900}
+								height={600}
+								priority
+								draggable={false}
+							/>
+							{website && (
+								<div className={styles.website}>
+									<Button buttonText={'Visit Website'} link={website} />
+								</div>
+							)}
 						</div>
 					</div>
-				</div>
+				)}
 			</div>
 		</section>
 	)

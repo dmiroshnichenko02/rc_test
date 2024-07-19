@@ -3,13 +3,18 @@ import { singleProjectUrl } from '@/configs/api.config'
 import { IProjectData } from '@/shared/types/project.interface'
 import { FC } from 'react'
 
+export const dynamicParams = true
+
 export async function generateStaticParams() {
 	try {
 		const res = await fetch(singleProjectUrl)
-		const blogs = await res.json()
-		return blogs.map((blog: { slug: string }) => ({
-			slug: blog.slug,
-		}))
+		const projects = await res.json()
+
+		return projects.map((project: { slug: string }) => {
+			return {
+				slug: project.slug,
+			}
+		})
 	} catch (error) {
 		return []
 	}
