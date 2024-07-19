@@ -29,10 +29,30 @@ const getData = async (slug: string) => {
 	return data
 }
 
+const getNextProjectSlug = async (slug: string) => {
+	if (!slug) return
+	const data: IProjectData[] = await fetch(singleProjectUrl).then(res =>
+		res.json()
+	)
+
+	const notCurrentProjectSlugs = data.filter(project => project.slug !== slug)
+
+	const randomSlug =
+		notCurrentProjectSlugs[
+			Math.floor(Math.random() * notCurrentProjectSlugs.length)
+		].slug
+
+	return randomSlug
+}
+
 const SingleProject: FC<{ params: { slug: string } }> = async ({ params }) => {
 	const data = await getData(params.slug)
+	const randomSlug = await getNextProjectSlug(params.slug)
 
-	return data && <SingleProjectPage data={data} />
+	return (
+		data &&
+		randomSlug && <SingleProjectPage nextSlug={randomSlug} data={data} />
+	)
 }
 
 export default SingleProject

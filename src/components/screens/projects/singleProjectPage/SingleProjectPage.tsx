@@ -2,6 +2,7 @@ import Development from '@/components/ui/singleProjectPage/development/Developme
 import HeadSection from '@/components/ui/singleProjectPage/headSection/HeadSection'
 import MainTask from '@/components/ui/singleProjectPage/mainTask/MainTask'
 import Management from '@/components/ui/singleProjectPage/management/Management'
+import NextProject from '@/components/ui/singleProjectPage/nextProject/NextProject'
 import Responsive from '@/components/ui/singleProjectPage/responsive/Responsive'
 import Support from '@/components/ui/singleProjectPage/support/Support'
 import Testing from '@/components/ui/singleProjectPage/testing/Testing'
@@ -9,7 +10,10 @@ import { IProjectData } from '@/shared/types/project.interface'
 import { FC } from 'react'
 import styles from './SingleProjectPage.module.scss'
 
-const SingleProjectPage: FC<{ data: IProjectData }> = ({ data }) => {
+const SingleProjectPage: FC<{ data: IProjectData; nextSlug: string }> = ({
+	data,
+	nextSlug,
+}) => {
 	return (
 		<main className={styles.main}>
 			<HeadSection
@@ -57,6 +61,7 @@ const SingleProjectPage: FC<{ data: IProjectData }> = ({ data }) => {
 				buttonText={data.acf.text_button_mn}
 				buttonLink={data.acf.button_link_man}
 			/>
+			<NextProject slug={nextSlug} />
 		</main>
 	)
 }
