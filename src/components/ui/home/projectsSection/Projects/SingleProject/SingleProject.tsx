@@ -18,8 +18,6 @@ const SingleProject: FC<ISingleProject> = ({ projectSlug }) => {
 
 	if (data === undefined) return null
 
-	console.log(data)
-
 	return (
 		<div>
 			{isLoading ? (

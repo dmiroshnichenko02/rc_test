@@ -11,7 +11,6 @@ import { FC } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 
 const Home: FC<IHome> = ({ acf, title }) => {
-	console.log(acf.sub_title_h)
 	return (
 		<main>
 			<HeadSection
