@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 
 export const useScreenDetector = () => {
-	const [width, setWidth] = useState<number>(0)
+	const [width, setWidth] = useState<number>(1025)
 
 	let isMobile = false
 	let isTablet = false

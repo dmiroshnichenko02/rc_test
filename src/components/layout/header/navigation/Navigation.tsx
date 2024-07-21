@@ -1,5 +1,6 @@
 'use client'
 
+import { useScreenDetector } from '@/hooks/useScreenDetector'
 import { IFieldMenu } from '@/shared/types/menu.interface'
 import { clearMenuUrl } from '@/utils/clearMenuUrl'
 import clsx from 'clsx'
@@ -14,6 +15,8 @@ interface INavigation {
 
 const Navigation: FC<INavigation> = ({ menu }) => {
 	const pathname = usePathname()
+
+	const { isMobile, isTablet } = useScreenDetector()
 
 	const [open, setOpen] = useState(false)
 	useEffect(() => {
@@ -36,7 +39,7 @@ const Navigation: FC<INavigation> = ({ menu }) => {
 									className={clsx(styles.menuItem, {
 										[styles.active]: isActive,
 									})}
-									onClick={() => setOpen(!open)}
+									onClick={() => isMobile || (isTablet && setOpen(!open))}
 								>
 									<Link href={itemUrl}>{item.title}</Link>
 								</li>
