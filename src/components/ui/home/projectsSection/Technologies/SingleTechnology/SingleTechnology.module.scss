@@ -18,8 +18,8 @@
 		margin-right: 20px;
 	}
 	.title {
-		color: $activeTextColor;
-		font-size: 22px;
+		color: #ee5667;
+		font-size: 18px;
 		font-style: normal;
 		font-weight: 500;
 		line-height: 28px;
@@ -28,10 +28,17 @@
 }
 
 @media (max-width: 1440px) {
-	.services {
-		width: 300px;
-		margin-bottom: 40px;
-		justify-content: left;
+	.technology {
+		width: 30%;
+		margin-bottom: 0px;
+	}
+}
+
+@media (max-width: 1023px) {
+	.technology {
+		width: calc(50% - 30px);
+		margin-bottom: 0px;
+		justify-content: flex-start;
 	}
 }
 
@@ -55,30 +62,30 @@
 }
 
 @media (max-width: 768px) {
-	.services {
-		width: 100%;
-		margin-bottom: 10px;
-		justify-content: left;
-		&:nth-child(even) {
-			flex-direction: row-reverse;
-			justify-content: right;
-			.img {
-				margin-left: 20px;
-			}
-			.title {
-				font-size: 18px;
-			}
-		}
-		.img {
-			height: 80px;
-			width: 80px;
-			img {
-				max-width: 40px;
-				max-height: 40px;
-			}
-		}
+	.technology {
 		.title {
-			font-size: 20px;
+			font-size: 14px;
+		}
+
+		.img {
+			width: 80px;
+			height: 80px;
+			img {
+				max-width: 35px;
+				max-height: 35px;
+			}
+		}
+	}
+}
+
+@media (max-width: 575px) {
+	.technology {
+		width: 100%;
+		flex-direction: column;
+		gap: 20px;
+
+		.img {
+			margin: 0;
 		}
 	}
 }

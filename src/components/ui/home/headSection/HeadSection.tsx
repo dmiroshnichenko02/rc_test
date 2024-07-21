@@ -21,11 +21,8 @@ const HeadSection: FC<IHeadSection> = ({
 	return (
 		<section className={styles.headSection}>
 			<div className='container'>
-				<Heading title={title} />
-				<SubHeading
-					title={secondTitle}
-					className='text-custom font-[var(--font-space)]'
-				/>
+				<Heading title={title} className={styles.title} />
+				<SubHeading title={secondTitle} className={styles.secondTitle} />
 				<SubHeading title={subTitle} className={styles.subTitle} />
 				<Benefits benefits={benefits} />
 			</div>

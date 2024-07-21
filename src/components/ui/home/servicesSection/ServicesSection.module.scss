@@ -60,15 +60,17 @@
 	.services {
 		padding-top: 50px;
 		padding-bottom: 0;
-		.title,
+		.title {
+			font-size: 25px;
+		}
 		.secondTitle {
-			font-size: 45px;
+			font-size: 35px;
 			line-height: 1.2em;
 			text-align: center;
 			margin-bottom: 15px;
 		}
 		.subTitle {
-			max-width: 60%;
+			max-width: 90%;
 			text-align: center;
 		}
 	}
@@ -95,9 +97,6 @@
 			}
 		}
 	}
-}
-
-@media (max-width: 992px) {
 	.services {
 		.title,
 		.secondTitle {
@@ -106,6 +105,22 @@
 		.subTitle {
 			max-width: 100%;
 			margin: 0 auto 25px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.services {
+		.subTitle {
+			font-size: 15px;
+		}
+	}
+}
+
+@media (max-width: 575px) {
+	.services {
+		.secondTitle {
+			font-size: 18px;
 		}
 	}
 }

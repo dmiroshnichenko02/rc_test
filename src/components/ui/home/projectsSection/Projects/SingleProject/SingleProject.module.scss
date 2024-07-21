@@ -245,18 +245,18 @@
 	}
 }
 
-@media (max-width: 1450px) {
-	.project {
+@media (max-width: 1440px) {
+	.singleProject {
+		min-height: 400px;
+		.img {
+			height: 340px;
+		}
 		.content {
-			position: relative;
-			min-height: 350px;
+			height: auto;
+			min-height: 220px;
+			padding: 20px 20px 20px;
 			.title {
-				margin-bottom: 30px;
-			}
-			.btns {
-				position: absolute;
-				content: '';
-				bottom: 50px;
+				font-size: 25px;
 			}
 		}
 	}
@@ -302,35 +302,18 @@
 	}
 }
 
-@media (max-width: 578px) {
-	.projectWrap {
-		padding: 0 5px;
-	}
-	.project {
-		.img {
-			height: 260px;
-		}
+@media (max-width: 575px) {
+	.singleProject {
 		.content {
-			padding: 25px 10px;
-			min-height: 240px;
-			.title {
-				font-size: 22px;
-			}
-			.descr {
-				font-size: 18px;
-			}
 			.btns {
-				bottom: 20px;
-				.web {
-					padding: 1rem;
-					.webText {
-						font-size: 16px;
-					}
-				}
-				.detail {
-					padding: 1rem 2rem;
-					font-size: 16px;
-				}
+				flex-direction: column;
+			}
+			.title {
+				font-size: 20px;
+			}
+
+			.descr {
+				font-size: 15px;
 			}
 		}
 	}

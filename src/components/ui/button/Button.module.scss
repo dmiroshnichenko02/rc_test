@@ -1,5 +1,6 @@
 @import '../../../assets/styles/variables.scss';
 .btn {
+	font-family: var(--font-space);
 	a {
 		text-align: center;
 		font-size: 18px;
@@ -39,6 +40,14 @@
 			&::before {
 				left: 0;
 			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.btn {
+		a {
+			font-size: 15px;
 		}
 	}
 }

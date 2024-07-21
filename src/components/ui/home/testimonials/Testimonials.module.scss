@@ -11,3 +11,9 @@
 	color: #000;
 	text-transform: capitalize;
 }
+
+@media (max-width: 768px) {
+	.title {
+		font-size: 25px;
+	}
+}

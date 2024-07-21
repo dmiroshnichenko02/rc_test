@@ -5,3 +5,24 @@
 	grid-auto-rows: minmax(706px, auto);
 	gap: 40px;
 }
+
+@media (max-width: 1440px) {
+	.projects {
+		grid-template-rows: minmax(450px, auto);
+		grid-auto-rows: minmax(450px, auto);
+	}
+}
+
+@media (max-width: 1023px) {
+	.projects {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 575px) {
+	.projects {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+}

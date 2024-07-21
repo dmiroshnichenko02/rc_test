@@ -8,8 +8,10 @@
 		margin-bottom: 40px;
 		font-size: 27px;
 		line-height: 30px;
-		font-weight: 700;
-		color: $mainTextColor;
+		font-weight: 600;
+		color: #000000;
+		font-family: var(--font-mont);
+		text-transform: capitalize;
 	}
 
 	.benefitsSubtitle {
@@ -38,5 +40,25 @@
 		font-weight: 500;
 		color: $activeTextColor;
 		line-height: 30px;
+	}
+}
+
+@media (max-width: 1023px) {
+	.singleBenefit {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		.benefitsTitle {
+			font-size: 18px;
+			line-height: 25px;
+		}
+
+		h3 {
+			font-size: 40px;
+		}
+
+		.benefitsSubtitle {
+			font-size: 35px;
+		}
 	}
 }

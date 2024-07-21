@@ -5,7 +5,7 @@ import styles from './HeaderLogotype.module.scss'
 
 const HeaderLogotype: FC = () => {
 	return (
-		<Link href='/'>
+		<Link href='/' className={styles.logotype}>
 			<svg
 				width='123'
 				height='71'

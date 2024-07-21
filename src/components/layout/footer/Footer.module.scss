@@ -237,7 +237,25 @@
 	.footer {
 		.title {
 			h2 {
-				font-size: 35px;
+				font-size: 30px;
+			}
+			h3 {
+				font-size: 20px;
+				min-width: 260px;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.footer {
+		.title {
+			h2 {
+				font-size: 25px;
+			}
+			h3 {
+				font-size: 15px;
+				min-width: 190px;
 			}
 		}
 	}

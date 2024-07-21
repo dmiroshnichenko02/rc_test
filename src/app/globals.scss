@@ -23,6 +23,58 @@ a {
 	font-family: var(--font-mont);
 }
 
+.ham {
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-transition: -webkit-transform 400ms;
+	transition: -webkit-transform 400ms;
+	transition: transform 400ms;
+	transition: transform 400ms, -webkit-transform 400ms;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.hamRotate.active {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.hamRotate180.active {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.line {
+	fill: none;
+	-webkit-transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+	transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+	stroke: #000;
+	stroke-width: 5.5;
+	stroke-linecap: round;
+}
+.ham4 .top {
+	stroke-dasharray: 40 121;
+}
+.ham4 .bottom {
+	stroke-dasharray: 40 121;
+}
+.ham4.active .top {
+	stroke-dashoffset: -68px;
+}
+.ham4.active .bottom {
+	stroke-dashoffset: -68px;
+}
+nav svg {
+	position: relative;
+	z-index: 888;
+}
+
+.active svg path {
+	fill: #fff;
+}
+.active .line {
+	stroke: #fff !important;
+}
+
 .container {
 	width: 100%;
 	padding-right: 15px;
@@ -33,7 +85,7 @@ a {
 
 @media (min-width: 576px) {
 	.container {
-		max-width: 540px;
+		max-width: 100%;
 		padding: 0 15px;
 	}
 }

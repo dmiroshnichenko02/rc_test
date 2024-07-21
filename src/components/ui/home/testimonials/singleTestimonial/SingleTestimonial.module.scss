@@ -20,3 +20,25 @@
 		transform: scale(0.5) rotate(180deg);
 	}
 }
+
+@media (max-width: 1023px) {
+	.testimonial {
+		width: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+	.testimonial {
+		padding: 45px 40px;
+		p {
+			font-size: 15px;
+			text-align: center;
+		}
+	}
+}
+
+@media (max-width: 575px) {
+	.testimonial {
+		padding: 45px 0px;
+	}
+}

@@ -23,3 +23,17 @@
 		margin-top: 40px;
 	}
 }
+
+@media (max-width: 1440px) {
+	.team {
+		padding-top: 30px;
+	}
+}
+
+@media (max-width: 768px) {
+	.team {
+		.titles {
+			font-size: 25px;
+		}
+	}
+}

@@ -47,7 +47,7 @@
 
 			&.active {
 				a {
-					color: #ff3928;
+					color: #ee5667;
 					&::after {
 						opacity: 1 !important;
 						-webkit-transform: translateX(-25px) !important;
@@ -64,6 +64,18 @@
 .burger,
 .mobileLogo {
 	display: none;
+}
+
+@media (max-width: 1279px) {
+	.nav {
+		.menu {
+			.menuItem {
+				a {
+					font-size: 16px;
+				}
+			}
+		}
+	}
 }
 
 @media (max-width: 992px) {
@@ -100,6 +112,7 @@
 			z-index: 887;
 			flex-direction: column;
 			justify-content: unset;
+			overflow: auto;
 			.menuItem a {
 				color: #fff;
 				opacity: 0;
@@ -118,6 +131,19 @@
 			opacity: 1 !important;
 			// transform: scale(1) !important;
 			transition: all 2s !important;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.nav {
+		.menu {
+			.menuItem {
+				a {
+					font-size: 20px;
+					line-height: 45px;
+				}
+			}
 		}
 	}
 }

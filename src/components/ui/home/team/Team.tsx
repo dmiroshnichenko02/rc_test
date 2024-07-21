@@ -32,6 +32,20 @@ const Team: FC<ITeam> = ({
 				<SubHeading title={title} className={styles.titles} />
 				<div className={styles.wrapper}>
 					<Swiper
+						breakpoints={{
+							0: {
+								slidesPerView: 1,
+								slidesPerGroup: 1,
+							},
+							768: {
+								slidesPerView: 2,
+								slidesPerGroup: 1,
+							},
+							1440: {
+								slidesPerView: 3,
+								slidesPerGroup: 1,
+							},
+						}}
 						spaceBetween={50}
 						slidesPerView={3}
 						slidesPerGroup={1}
