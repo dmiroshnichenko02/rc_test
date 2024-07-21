@@ -5,7 +5,11 @@ import styles from './HeaderLogotype.module.scss'
 
 const HeaderLogotype: FC = () => {
 	return (
-		<Link href='/' className={styles.logotype}>
+		<Link
+			href='/'
+			className={styles.logotype}
+			aria-label='Logotype and link to home'
+		>
 			<svg
 				width='123'
 				height='71'
