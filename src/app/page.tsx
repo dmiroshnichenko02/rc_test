@@ -25,6 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			title: data.yoast_head_json?.og_title,
 			description: data.yoast_head_json?.schema['@graph'][2].description,
 			url: 'https://rcw108.com/',
+			siteName: data.yoast_head_json?.og_site_name,
 			images: [
 				{
 					url: data.yoast_head_json?.schema['@graph'][3].logo.url || '',
