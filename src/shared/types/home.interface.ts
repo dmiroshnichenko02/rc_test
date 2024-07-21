@@ -1,3 +1,5 @@
+import { IYoastSeo } from './seo.interface'
+
 export interface Benefit {
 	title: string
 	number: string
@@ -58,6 +60,7 @@ export interface IHomeData {
 		title_tm: string
 		testimonials: Testimonial[]
 	}
+	yoast_head_json?: IYoastSeo
 }
 
 export interface IHome extends IHomeData {

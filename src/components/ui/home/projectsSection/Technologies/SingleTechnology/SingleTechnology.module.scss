@@ -80,7 +80,7 @@
 
 @media (max-width: 575px) {
 	.technology {
-		width: 100%;
+		width: calc(50% - 30px);
 		flex-direction: column;
 		gap: 20px;
 
