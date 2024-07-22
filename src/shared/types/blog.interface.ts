@@ -1,3 +1,5 @@
+import { IYoastSeo } from './seo.interface'
+
 enum Status {
 	PUBLISH = 'publish',
 	DRAFT = 'draft',
@@ -14,6 +16,7 @@ export interface IBlog {
 		rendered: string
 	}
 	fimg_url: string
+	yoast_head_json: IYoastSeo
 }
 
 export interface ISingleBlog {
@@ -23,4 +26,5 @@ export interface ISingleBlog {
 	slug: string
 	date: string
 	featured_image: string
+	yoast_head_json: IYoastSeo
 }

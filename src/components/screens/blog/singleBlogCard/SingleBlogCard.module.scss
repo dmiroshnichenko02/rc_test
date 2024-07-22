@@ -44,3 +44,16 @@
 		justify-content: flex-end;
 	}
 }
+
+@media (max-width: 1023px) {
+	.singleBlog {
+		.title {
+			font-size: 18px;
+			line-height: 25px;
+		}
+
+		p {
+			font-size: 15px;
+		}
+	}
+}

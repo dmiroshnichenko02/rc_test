@@ -20,8 +20,14 @@ const Navigation: FC<INavigation> = ({ menu }) => {
 
 	const [open, setOpen] = useState(false)
 	useEffect(() => {
-		document.body.style.overflow = open ? 'hidden' : 'auto'
+		document.body.style.overflow = open ? 'hidden' : ''
 	}, [open])
+
+	const handleNoDesktopClick = () => {
+		if (isTablet || isMobile) {
+			setOpen(!open)
+		}
+	}
 
 	return (
 		<>
@@ -39,7 +45,7 @@ const Navigation: FC<INavigation> = ({ menu }) => {
 									className={clsx(styles.menuItem, {
 										[styles.active]: isActive,
 									})}
-									onClick={() => isMobile || (isTablet && setOpen(!open))}
+									onClick={handleNoDesktopClick}
 								>
 									<Link href={itemUrl}>{item.title}</Link>
 								</li>

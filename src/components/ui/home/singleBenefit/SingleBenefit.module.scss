@@ -45,6 +45,16 @@
 
 @media (max-width: 1023px) {
 	.singleBenefit {
+		.benefitsSubtitle {
+			h3 {
+				font-size: 40px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1023px) {
+	.singleBenefit {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;

@@ -19,5 +19,36 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: 200px;
+		> div {
+			width: 50%;
+		}
+	}
+}
+
+@media (max-width: 1023px) {
+	.dev {
+		.wrapper {
+			gap: 20px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.dev {
+		.title {
+			font-size: 30px;
+			line-height: 45px;
+		}
+
+		.wrapper {
+			flex-direction: column;
+			gap: 40px;
+			> div {
+				width: 100%;
+				p {
+					text-align: center;
+				}
+			}
+		}
 	}
 }

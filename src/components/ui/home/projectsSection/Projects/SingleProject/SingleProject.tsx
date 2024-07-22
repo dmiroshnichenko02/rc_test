@@ -16,8 +16,6 @@ interface ISingleProject {
 const SingleProject: FC<ISingleProject> = ({ projectSlug }) => {
 	const { isLoading, data } = useSingleProject(projectSlug)
 
-	console.log(isLoading)
-
 	if (data === undefined)
 		return <SkeletonLoader count={1} className='h-[755px] w-full opacity-40' />
 

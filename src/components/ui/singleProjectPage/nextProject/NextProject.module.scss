@@ -28,3 +28,14 @@
 		height: 750px;
 	}
 }
+
+@media (max-width: 767px) {
+	.next {
+		min-height: 350px;
+		background-position: top;
+		background-size: cover;
+		.wrapper {
+			height: 350px;
+		}
+	}
+}

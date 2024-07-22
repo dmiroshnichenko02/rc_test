@@ -35,3 +35,62 @@
 		}
 	}
 }
+
+@media (max-width: 1439px) {
+	.resp {
+		.wrapper {
+			.images {
+				.img {
+					height: 530px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1023px) {
+	.resp {
+		.wrapper {
+			.description {
+				font-size: 15px;
+				margin-bottom: 60px;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.resp {
+		.wrapper {
+			.title {
+				font-size: 30px;
+				line-height: 45px;
+			}
+
+			.images {
+				flex-wrap: wrap;
+
+				.img {
+					height: 400px;
+					width: calc(50% - 20px);
+
+					&:nth-child(odd) {
+						transform: translateY(0);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 575px) {
+	.resp {
+		.wrapper {
+			.images {
+				.img {
+					height: 340px;
+				}
+			}
+		}
+	}
+}

@@ -21,7 +21,7 @@ const HeadSection: FC<IHeadSection> = ({ information, logotype, title }) => {
 				{title && (
 					<Heading title={ReactHtmlParser(title)} className={styles.title} />
 				)}
-				{logotype && (
+				{logotype && logotype !== '' && (
 					<div className={styles.img}>
 						<Image
 							src={logotype}

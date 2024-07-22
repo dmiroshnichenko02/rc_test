@@ -12,7 +12,9 @@ const getData = async () => {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-	const data: IHome = await fetch(homePageUrl).then(res => res.json())
+	const data: IHome = await fetch(homePageUrl, {
+		next: { revalidate: 3600 },
+	}).then(res => res.json())
 
 	return {
 		title: data.yoast_head_json?.og_title,

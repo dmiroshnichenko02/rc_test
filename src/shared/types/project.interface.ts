@@ -1,3 +1,5 @@
+import { IYoastSeo } from './seo.interface'
+
 interface ProjectGuid {
 	rendered: string
 }
@@ -143,6 +145,7 @@ export interface IProjectData {
 	meta: ProjectMeta
 	acf: ProjectACF
 	_links: ProjectLinks
+	yoast_head_json: IYoastSeo
 }
 
 export interface IImage {

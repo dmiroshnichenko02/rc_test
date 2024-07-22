@@ -54,7 +54,7 @@ const Management: FC<IManagement> = ({
 							)}
 						</div>
 						<div className={styles.btns}>
-							{buttonText && buttonLink && (
+							{buttonText && (
 								<Button
 									link={buttonLink}
 									buttonText={ReactHtmlParser(buttonText)}

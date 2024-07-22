@@ -40,6 +40,7 @@
 	.btns {
 		display: flex;
 		margin-top: 30px;
+		justify-content: flex-end;
 	}
 
 	.box {
@@ -52,10 +53,57 @@
 		}
 
 		.right {
+			width: 50%;
 			.img {
 				position: relative;
-				width: 775px;
+				width: 100%;
 				height: 488px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1279px) {
+	.support {
+		.box {
+			flex-direction: column;
+			gap: 40px;
+			.left {
+				padding-right: 0;
+				width: 100%;
+			}
+			.right {
+				width: 100%;
+				.img {
+					height: 400px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.support {
+		.title,
+		.subtitle {
+			font-size: 30px;
+			line-height: 45px;
+		}
+		.description {
+			font-size: 15px;
+			max-width: 100%;
+			margin-bottom: 40px;
+		}
+	}
+}
+
+@media (max-width: 575px) {
+	.support {
+		.box {
+			.right {
+				.img {
+					height: 300px;
+				}
 			}
 		}
 	}
