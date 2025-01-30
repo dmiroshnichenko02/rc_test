@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactElement } from 'react'
 
 import Image from 'next/image'
 import ReactHtmlParser from 'react-html-parser'
@@ -30,7 +30,11 @@ const Development: FC<IDevelopment> = ({ description, image, title }) => {
 							/>
 						</div>
 					)}
-					{description && <Description title={ReactHtmlParser(description)} />}
+					{description && (
+						<Description
+							title={ReactHtmlParser(description) as ReactElement[]}
+						/>
+					)}
 				</div>
 			</div>
 		</section>

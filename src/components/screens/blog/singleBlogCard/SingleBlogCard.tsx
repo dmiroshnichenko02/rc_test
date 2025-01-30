@@ -3,7 +3,7 @@ import Description from '@/components/ui/headings/Description'
 import SubHeading from '@/components/ui/headings/SubHeading'
 import { IBlog } from '@/shared/types/blog.interface'
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, ReactElement } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import styles from './SingleBlogCard.module.scss'
 
@@ -21,7 +21,11 @@ const SingleBlogCard: FC<{ post: IBlog }> = ({ post }) => {
 			<div className={styles.content}>
 				<SubHeading title={post.title.rendered} className={styles.title} />
 				<Description
-					title={ReactHtmlParser(`${post.content.rendered.slice(0, 160)} ...`)}
+					title={
+						ReactHtmlParser(
+							`${post.content.rendered.slice(0, 160)} ...`
+						) as ReactElement[]
+					}
 				/>
 				<div className={styles.btns}>
 					<Button buttonText={'Read More'} link={`/blog/${post.slug}`} />

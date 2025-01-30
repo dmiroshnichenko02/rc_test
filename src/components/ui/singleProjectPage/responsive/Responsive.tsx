@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactElement } from 'react'
 
 import { IImage } from '@/shared/types/project.interface'
 import Image from 'next/image'
@@ -21,7 +21,7 @@ const Responsive: FC<IResponsive> = ({ description, images, title }) => {
 					{title && <Heading title={title} className={styles.title} />}
 					{description && (
 						<Description
-							title={ReactHtmlParser(description)}
+							title={ReactHtmlParser(description) as ReactElement[]}
 							className={styles.description}
 						/>
 					)}

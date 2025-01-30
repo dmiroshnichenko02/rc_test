@@ -1,7 +1,7 @@
 import Heading from '@/components/ui/headings/Heading'
 import { ISingleBlog } from '@/shared/types/blog.interface'
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, ReactElement } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import styles from './SingleBlog.module.scss'
 
@@ -16,7 +16,9 @@ const SingleBlog: FC<{ data: ISingleBlog }> = ({ data }) => {
 						<Image src={data.featured_image} alt={data.title} fill />
 					</div>
 
-					<div className={styles.content}>{ReactHtmlParser(data.content)}</div>
+					<div className={styles.content}>
+						{ReactHtmlParser(data.content) as ReactElement[]}
+					</div>
 				</div>
 			</div>
 		</section>

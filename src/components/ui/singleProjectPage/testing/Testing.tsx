@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactElement } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import Description from '../../headings/Description'
 import Heading from '../../headings/Heading'
@@ -22,13 +22,15 @@ const Testing: FC<ITesting> = ({ description, tools, title }) => {
 				{title && <Heading title={title} className={styles.title} />}
 				{description && (
 					<Description
-						title={ReactHtmlParser(description)}
+						title={ReactHtmlParser(description) as ReactElement[]}
 						className={styles.descr}
 					/>
 				)}
 				<div className={styles.wrapper}>
 					{tools.length &&
-						tools.map(tool => <SingleWork text={ReactHtmlParser(tool.list)} />)}
+						tools.map(tool => (
+							<SingleWork text={ReactHtmlParser(tool.list) as ReactElement[]} />
+						))}
 				</div>
 			</div>
 		</section>

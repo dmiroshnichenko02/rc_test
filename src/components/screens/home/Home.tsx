@@ -7,7 +7,7 @@ import Team from '@/components/ui/home/team/Team'
 import Testimonials from '@/components/ui/home/testimonials/Testimonials'
 import Works from '@/components/ui/home/works/Works'
 import { IHome } from '@/shared/types/home.interface'
-import { FC } from 'react'
+import { FC, ReactElement } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 
 const Home: FC<IHome> = ({ acf, title }) => {
@@ -22,7 +22,7 @@ const Home: FC<IHome> = ({ acf, title }) => {
 			<ServicesSection
 				title={acf.title_s}
 				headlessTitle={acf.title_headless}
-				subTitle={ReactHtmlParser(acf.text_s)}
+				subTitle={ReactHtmlParser(acf.text_s) as ReactElement[]}
 				reactImage={acf.react_wordpress_img}
 				reactImageSecond={acf.react_wordpress_img_second}
 				reactImageThird={acf.react_wordpress_img_third}
@@ -35,7 +35,7 @@ const Home: FC<IHome> = ({ acf, title }) => {
 				title={acf.title_p}
 				subtitle={acf.description_pro}
 				buttonLink={acf.link_btn_p}
-				buttonText={ReactHtmlParser(acf.text_circle_p)}
+				buttonText={ReactHtmlParser(acf.text_circle_p) as ReactElement[]}
 			/>
 			<Works
 				title={acf.title_hw}

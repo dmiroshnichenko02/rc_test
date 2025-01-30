@@ -1,5 +1,5 @@
 import SkeletonLoader from '@/components/ui/SkeletonLoader'
-import { FC } from 'react'
+import { FC, ReactElement } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import { useSingleProject } from './useSingleProject'
 
@@ -52,16 +52,16 @@ const SingleProject: FC<ISingleProject> = ({ projectSlug }) => {
 					<SubHeading
 						title={
 							typeof data.title === 'string'
-								? ReactHtmlParser(data.title)
-								: ReactHtmlParser(data.title.rendered)
+								? (ReactHtmlParser(data.title) as ReactElement[])
+								: (ReactHtmlParser(data.title.rendered) as ReactElement[])
 						}
 						className={styles.title}
 					/>
 					<Description
 						title={
 							typeof data.excerpt === 'string'
-								? ReactHtmlParser(data.excerpt)
-								: ReactHtmlParser(data.excerpt.rendered)
+								? (ReactHtmlParser(data.excerpt) as ReactElement[])
+								: (ReactHtmlParser(data.excerpt.rendered) as ReactElement[])
 						}
 						className={styles.descr}
 					/>

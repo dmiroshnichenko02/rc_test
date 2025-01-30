@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { FC } from 'react'
+import { FC, ReactElement } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
@@ -35,7 +35,9 @@ const Testimonials: FC<ITestimonials> = ({ testimonials, title }) => {
 					>
 						{testimonials.map((testimonial, index) => (
 							<SwiperSlide key={index}>
-								<SingleTestimonial text={ReactHtmlParser(testimonial.text)} />
+								<SingleTestimonial
+									text={ReactHtmlParser(testimonial.text) as ReactElement[]}
+								/>
 							</SwiperSlide>
 						))}
 					</Swiper>

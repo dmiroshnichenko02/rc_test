@@ -1,6 +1,6 @@
 import { IImage } from '@/shared/types/project.interface'
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, ReactElement } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import Button from '../../button/Button'
 import Description from '../../headings/Description'
@@ -49,7 +49,7 @@ const Management: FC<IManagement> = ({
 							{text && (
 								<Description
 									className={styles.descr}
-									title={ReactHtmlParser(text)}
+									title={ReactHtmlParser(text) as ReactElement[]}
 								/>
 							)}
 						</div>
@@ -57,7 +57,7 @@ const Management: FC<IManagement> = ({
 							{buttonText && (
 								<Button
 									link={buttonLink}
-									buttonText={ReactHtmlParser(buttonText)}
+									buttonText={ReactHtmlParser(buttonText) as ReactElement[]}
 									className={styles.btn}
 								/>
 							)}

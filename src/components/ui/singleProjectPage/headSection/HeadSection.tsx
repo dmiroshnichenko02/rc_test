@@ -1,6 +1,6 @@
 import { Benefit } from '@/shared/types/home.interface'
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, ReactElement } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import Heading from '../../headings/Heading'
 import SingleBenefit from '../../home/singleBenefit/SingleBenefit'
@@ -19,7 +19,10 @@ const HeadSection: FC<IHeadSection> = ({ information, logotype, title }) => {
 		<section className={styles.headSection}>
 			<div className='container'>
 				{title && (
-					<Heading title={ReactHtmlParser(title)} className={styles.title} />
+					<Heading
+						title={ReactHtmlParser(title) as ReactElement[]}
+						className={styles.title}
+					/>
 				)}
 				{logotype && logotype !== '' && (
 					<div className={styles.img}>

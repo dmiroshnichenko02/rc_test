@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactElement } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import Button from '../../button/Button'
 import Description from '../../headings/Description'
@@ -33,13 +33,16 @@ const Works: FC<IWorks> = ({
 
 				<div className={styles.wrapper}>
 					{works.map((work, index) => (
-						<SingleWork key={index} text={ReactHtmlParser(work.text)} />
+						<SingleWork
+							key={index}
+							text={ReactHtmlParser(work.text) as ReactElement[]}
+						/>
 					))}
 				</div>
 				<div className={styles.btns}>
 					<Button
 						link={buttonLink}
-						buttonText={ReactHtmlParser(buttonText)}
+						buttonText={ReactHtmlParser(buttonText) as ReactElement[]}
 						className={styles.btn}
 					/>
 				</div>

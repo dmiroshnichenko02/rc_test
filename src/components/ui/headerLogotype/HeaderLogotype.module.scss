@@ -32,3 +32,22 @@
 		}
 	}
 }
+
+.image {
+	max-width: 80vw;
+}
+
+.shape {
+	stroke-width: 3px;
+	stroke-linecap: round;
+	fill: transparent;
+	transition: fill 0.3s ease-in-out;
+}
+
+.first {
+	stroke-width: 5px;
+}
+
+.filled {
+	fill: black;
+}

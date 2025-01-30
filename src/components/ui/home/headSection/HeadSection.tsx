@@ -1,6 +1,8 @@
 import { Benefit } from '@/shared/types/home.interface'
+import { motion } from 'framer-motion'
 import { FC } from 'react'
 import Heading from '../../headings/Heading'
+import HeadlineHeading from '../../headings/HeadlineHeading'
 import SubHeading from '../../headings/SubHeading'
 import Benefits from '../benefits/Benefits'
 import styles from './HeadSection.module.scss'
@@ -22,13 +24,26 @@ const HeadSection: FC<IHeadSection> = ({
 		<section className={styles.headSection}>
 			<div className='container'>
 				<Heading title={title} className={styles.title} />
-				<SubHeading title={secondTitle} className={styles.secondTitle} />
+				<HeadlineHeading title={secondTitle} className={styles.secondTitle} />
 				<SubHeading title={subTitle} className={styles.subTitle} />
 				<Benefits benefits={benefits} />
 			</div>
-			<a href='#services' id={styles.scroll}>
+			<motion.a
+				href='#services'
+				id={styles.scroll}
+				whileHover={{ scale: 1.1 }}
+				whileTap={{ scale: 0.9 }}
+				transition={{ type: 'spring', stiffness: 300 }}
+				onClick={e => {
+					e.preventDefault()
+					const target = document.getElementById('services')
+					if (target) {
+						target.scrollIntoView({ behavior: 'smooth' })
+					}
+				}}
+			>
 				<span className={styles.scroll}></span>
-			</a>
+			</motion.a>
 		</section>
 	)
 }

@@ -5,7 +5,7 @@ import Description from '@/components/ui/headings/Description'
 import Heading from '@/components/ui/headings/Heading'
 import { INotFound } from '@/shared/types/notFound.interface'
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, ReactElement } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import styles from './NotFound.module.scss'
 
@@ -15,7 +15,7 @@ const NotFound: FC<{ options: INotFound }> = ({ options }) => {
 			<div className='container'>
 				<Heading title={options.title_ch} className={styles.title} />
 				<Description
-					title={ReactHtmlParser(options.subtitle)}
+					title={ReactHtmlParser(options.subtitle) as ReactElement[]}
 					className={styles.descr}
 				/>
 				<div className={styles.img}>

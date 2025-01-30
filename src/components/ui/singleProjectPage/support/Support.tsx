@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactElement } from 'react'
 
 import Image from 'next/image'
 import ReactHtmlParser from 'react-html-parser'
@@ -40,7 +40,7 @@ const Support: FC<ISupport> = ({
 							)}
 							{text && (
 								<Description
-									title={ReactHtmlParser(text)}
+									title={ReactHtmlParser(text) as ReactElement[]}
 									className={styles.text}
 								/>
 							)}
